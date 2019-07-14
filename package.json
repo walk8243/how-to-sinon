@@ -4,12 +4,36 @@
   "description": "Sinon.JSを使ったテストの書き方",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run tsc"
+    "build": "yarn run tsc",
+    "test": "yarn run nyc mocha test/*.ts"
   },
   "repository": "git@github.com:walk8243/how-to-sinon.git",
   "author": "walk8243 <walk8243@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.2",
+    "@types/sinon": "^7.0.13",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2",
+    "ts-node": "^8.3.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "*.d.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
