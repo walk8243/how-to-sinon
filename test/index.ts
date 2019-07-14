@@ -21,11 +21,19 @@ describe('case1', () => {
     stubClassConstructor.restore();
     stubClassGet.restore();
   });
-  it('assert', () => {
+  it('normal', () => {
     const result = case1();
     assert.equal(result, 'stub');
+
+    // 呼び出し回数
     assert.ok(stubClassConstructor.calledOnce);
     assert.ok(stubClassGet.calledOnce);
+
+    // 呼び出し順序
     assert.ok(stubClassGet.calledAfter(stubClassConstructor));
+
+    // それぞれへのInの内容
+    assert.deepEqual(stubClassConstructor.firstCall.args, [ 1 ]);
+    assert.deepEqual(stubClassGet.firstCall.args, []);
   });
 });
