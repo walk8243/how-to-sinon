@@ -1,4 +1,6 @@
 export default class Class {
+  private field?: string;
+
   constructor(public index: number) {}
 
   getCase1() {
@@ -17,5 +19,12 @@ export default class Class {
   }
   protected getProtected() {
     return 'getProtected';
+  }
+
+  setField(field: string) {
+    this.field = field;
+  }
+  getField() {
+    return this.field;
   }
 }
