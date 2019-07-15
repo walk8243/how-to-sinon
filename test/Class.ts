@@ -12,13 +12,35 @@ describe('Class', () => {
     });
   });
 
-  describe('get', () => {
+  describe('getCase1', () => {
     let c!: Class;
     beforeEach(() => {
       c = new Class(10);
     });
     it('normal', () => {
-      assert.equal(c.getCase1(), 'Class');
+      const result = c.getCase1();
+      assert.equal(result, 'Class');
+    });
+  });
+
+  describe('getPrivate', () => {
+    let c!: Class;
+    beforeEach(() => {
+      c = new Class(10);
+    });
+    it('normal', () => {
+      const result = c['getPrivate']();
+      assert.equal(result, 'getPrivate');
+    });
+  });
+  describe('getProtected', () => {
+    let c!: Class;
+    beforeEach(() => {
+      c = new Class(10);
+    });
+    it('normal', () => {
+      const result = c['getProtected']();
+      assert.equal(result, 'getProtected');
     });
   });
 });
