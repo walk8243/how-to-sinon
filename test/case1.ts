@@ -9,7 +9,7 @@ describe('case1', () => {
   const dummyClass = new Class.default(10);
   before(() => {
     stubClassConstructor = stub(Class, 'default');
-    stubClassGet = stub(dummyClass, 'get');
+    stubClassGet = stub(dummyClass, 'getCase1');
   });
   beforeEach(() => {
     stubClassConstructor.reset();
