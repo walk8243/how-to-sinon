@@ -18,7 +18,7 @@ describe('Class', () => {
       c = new Class(10);
     });
     it('normal', () => {
-      assert.equal(c.get(), 'Class');
+      assert.equal(c.getCase1(), 'Class');
     });
   });
 });

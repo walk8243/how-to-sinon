@@ -1,7 +1,7 @@
 export default class Class {
   constructor(public index: number) {}
 
-  get() {
+  getCase1() {
     return 'Class';
   }
 }
