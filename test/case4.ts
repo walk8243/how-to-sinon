@@ -15,7 +15,7 @@ describe('case4', () => {
   });
   it('normal', () => {
     const s = new Sub();
-    assert.deepEqual(Object.keys(s), []);
+    assert.deepEqual(s, {});
     assert.ok(fakeOriginConstructor.calledOnce);
     assert.deepEqual(fakeOriginConstructor.firstCall.args, [ 5 ]);
   });
