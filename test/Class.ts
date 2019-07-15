@@ -7,7 +7,7 @@ describe('Class', () => {
       const testCases = [ 1, 10, 0 ];
       for(const testCase of testCases) {
         const c = new Class(testCase);
-        assert.equal(c.index, testCase, 'Error in `'+String(testCase)+'`');
+        assert.deepEqual(c, { index: testCase }, 'Error in `'+String(testCase)+'`');
       }
     });
   });
